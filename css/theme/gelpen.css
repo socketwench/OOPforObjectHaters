@@ -1,5 +1,6 @@
 @import url(../../lib/font/Shadows_Into_Light_Two/shadows_into_light.css);
 @import url(../../lib/font/Raleway/Raleway.css);
+@import url(../../lib/font/Eater/Eater.css);
 
 /**
  * Gelpen theme for reveal.js. This is the opposite of the 'white' theme.
@@ -26,6 +27,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
  .reveal .gelpen-yellow {
    color: #CDD198;
+ }
+
+ .reveal .eater {
+   font-family: 'Eater', Helvetica, sans-serif;
+   color: #FB959F;
  }
 
 /*********************************************
