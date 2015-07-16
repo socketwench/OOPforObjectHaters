@@ -103,6 +103,14 @@ body {
   max-width: 95%;
   max-height: 95%; }
 
+.reveal img.fragment.current-visible {
+  height: 0;
+}
+
+.reveal img.current-fragment {
+  height: auto;
+}
+
 .reveal strong, .reveal b {
   font-weight: bold; }
 
