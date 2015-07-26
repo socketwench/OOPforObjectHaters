@@ -103,7 +103,7 @@
                     </section>
                     <section>
                         <h2>PHP doesn't enforce discipline</h2>
-                        <p>No struct leads to Arrays Of Doom</p>
+                        <p>No <code>struct</code> leads to Arrays Of Doom</p>
                         <p>Weak typing makes testing, documentation hard</p>
                     </section>
 				</section>
@@ -159,6 +159,154 @@
                         <p class="fragment">May differ from the ideal...</p>
                         <p class="fragment">...but identifiable as part of the same class</p>
                     </section>
+                    <section>
+                        <img src="images/whatsThisHaveToDoWithOOP.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Programming Plato</h1>
+                    </section>
+                    <section data-background="images/definingChairs.png" data-background-size="contain" data-background-transition="fade none">
+                        <h2>Defining the Platonic Chair</h2>
+                        <code class="fragment">class Chair;</code>
+                    </section>
+                    <section data-background="images/extendingChairs1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/extendingChairs2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/extendingChairs3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/extendingChairs4.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/extendingChairs5.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/extendingChairs6.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/inheritance.png" data-background-transition="none" data-background-size="contain">
+                        <h2>Inheritance</h2>
+                        <p class="fragment">Extends the parent, or "base" class</p>
+                        <p class="fragment">Child class "inherits" aspects from the parent</p>
+                    </section>
+                    <section data-background="images/inheritance.png" data-background-transition="none" data-background-size="contain">
+                        <h2>Extending the Chair Class</h2>
+                        <p class="fragment"><code>class ComfyChair extends Chair;</code></p>
+                        <p class="fragment"><code>class OfficeChair extends Chair;</code></p>
+                        <p class="fragment"><code>class WeirdChair extends Chair;</code></p>
+                    </section>
+                    <section>
+                        <img src="images/letsBuildRobots.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Building Robots</h1>
+                    </section>
+                    <section data-background="images/whatMakesARobot1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/whatMakesARobot2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/whatMakesARobot3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/whatMakesARobot4.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Defining Classes</h2>
+                        <pre><code>
+    class Robot {
+        // More stuff here.
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>States and Properties</h2>
+                        <p>"Class Variables"</p>
+                        <p><em>Encapsulates</em> state in the object</p>
+                    </section>
+                    <section>
+                        <h2>Defining Class Variables</h2>
+                        <pre><code>
+    class Robot {
+        protected $myVariableName = 'Initial Value.';
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Adding Internal Logic</h2>
+                    </section>
+                    <section>
+                        <h2>Methods</h2>
+                        <p>"Class Functions"</p>
+                        <p>Gives the class knobs and buttons</p>
+                    </section>
+                    <section>
+                        <h2>Defining Methods</h2>
+                        <pre><code>
+    class Robot {
+        public function myMethod($param) {
+            // Method body
+        }
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Accessing Properties in Methods</h2>
+                        <p class="fragment"><code>$this</code> keyword</p>
+                        <pre class="fragment"><code>
+    class Robot {
+        public function setMyVariable($param) {
+            $this->$myVariableName = $param;
+        }
+
+        public function getMyVariable() {
+            return $this->myVariableName;
+        }
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Special Methods</h2>
+                        <p>Plays a special role in the language</p>
+                        <p><a href="http://php.net/manual/en/language.oop5.magic.php">http://php.net/manual/en/language.oop5.magic.php</a></p>
+                    </section>
+                    <section>
+                        <h2>Constructors</h2>
+                        <p>"Returns" an object of the class' type</p>
+                        <p>May have parameters like other methods</p>
+                        <pre><code>
+    class Robot {
+        public function __construct($someOption = NULL) {
+            // Build the object.
+        }
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Destructors</h2>
+                        <p>Called just before deleting an object of the classes type</p>
+                        <p>No parameters allowed</p>
+                        <pre><code>
+    class Robot {
+        public __destruct() {
+            // Cleanup before deleting the object.
+        }
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Destructors in PHP</h2>
+                        <p>Rarely used as PHP is <em>garbage collected</em></p>
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -182,9 +330,6 @@
                         <p>Different options selected on creation</p>
                         <P>Modification after creation</P>
                     </section>
-                    <section>
-                        <img src="images/whatsThisHaveToDoWithOOP.png">
-                    </section>
                 </section>
                 <section>
                     <section>
@@ -195,47 +340,10 @@
                         <p>They're used to build your house, not be your house</p>
                     </section>
                     <section>
-                        <h2>Defining Classes</h2>
-                        <pre><code>
-    class MyClass {
-        // More stuff here.
-    }
-                        </code></pre>
-                    </section>
-                    <section>
                         <h2>Creating Objects</h2>
                         <p class="fragment">"Instantiating a class"</p>
                         <pre><code>
     $myObject = new MyClass();
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>Properties</h2>
-                        <p>"Class Variables"</p>
-                        <p><em>Encapsulates</em> state in the object</p>
-                    </section>
-                    <section>
-                        <h2>Defining Class Variables</h2>
-                        <pre><code>
-    class MyClass {
-        public $myVariableName = 'Initial Value.';
-    }
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>Methods</h2>
-                        <p>"Class Functions"</p>
-                        <p>Gives the class knobs and buttons</p>
-                        <p>May access all the properties of the class.</p>
-                    </section>
-                    <section>
-                        <h2>Defining Methods</h2>
-                        <pre><code>
-    class MyClassName {
-        function public myMethod($param) {
-            // Method body
-        }
-    }
                         </code></pre>
                     </section>
                 </section>
