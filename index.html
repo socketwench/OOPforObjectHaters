@@ -201,12 +201,17 @@
                         <p class="fragment"><code>class WeirdChair extends Chair;</code></p>
                     </section>
                     <section>
+                        <h2>IS_A Relationship</h2>
+                        <p>Child class is a decedent of parent class</p>
+                        <img src="images/IS_A.png">
+                    </section>
+                    <section>
                         <img src="images/letsBuildRobots.png">
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Building Robots</h1>
+                        <h1>Robot Blueprints</h1>
                     </section>
                     <section data-background="images/whatMakesARobot1.png" data-background-transition="none" data-background-size="contain">
                         &nbsp;
@@ -229,9 +234,9 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h2>States and Properties</h2>
+                        <h2>Properties</h2>
                         <p>"Class Variables"</p>
-                        <p><em>Encapsulates</em> state in the object</p>
+                        <p><em>Encapsulates</em> state in the class</p>
                     </section>
                     <section>
                         <h2>Defining Class Variables</h2>
@@ -241,8 +246,83 @@
     }
                         </code></pre>
                     </section>
+                    <section data-transition="none" data-background="images/propertyDeclaration1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/propertyDeclaration2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/propertyDeclaration3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/propertyDeclaration4.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
                     <section>
-                        <h2>Adding Internal Logic</h2>
+                        <h2>Access Specifier</h2>
+                        <p>Precedes a property definition</p>
+                        <p><code>public</code>, <code>private</code>, or <code>protected</code></p>
+                    </section>
+                    <section data-transition="none" data-background="images/threeRobots.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/public1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/public2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/public3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>"public" Specifier</h2>
+                        <p>Child classes inherit the property</p>
+                        <p>Everyone can read & write the property</p>
+                    </section>
+                    <section data-transition="none" data-background="images/private1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/private2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/private3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>"private" Specifier</h2>
+                        <p>Child classes do <em>not</em> inherit the property</p>
+                        <p>No one but the defining class can see or use it</p>
+                    </section>
+                    <section data-transition="none" data-background="images/protected1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/protected2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-transition="none" data-background="images/protected3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Classes Can Be Properties Too!</h2>
+                        <p>Define them like you would any other variable</p>
+                        <pre><code>
+    class Battery {}
+
+    class Robot {
+        protected $battery;
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>HAS_A Relationship</h2>
+                        <p>Hosting class possesses hosted class</p>
+                        <img src="images/HAS_A.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Making your Robot Go</h1>
                     </section>
                     <section>
                         <h2>Methods</h2>
@@ -260,8 +340,23 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h2>Accessing Properties in Methods</h2>
+                        <h2>Access Specifies for Methods</h2>
+                        <p>Controls who can <em>call</em>, not see.</p>
+                    </section>
+                    <section>
+                        <h2>Who ya gonna (allow) to call?</h2>
+                        <p><code>public</code> = Everyone</p>
+                        <p><code>private</code> = Methods in the same class</p>
+                        <p><code>protected</code> = Only classes in the same family</p>
+                    </section>
+                    <section>
+                        <h2>Talking to Yourself</h2>
                         <p class="fragment"><code>$this</code> keyword</p>
+                        <p class="fragment">Refers to class<sup>1</sup> that owns the method</p>
+                        <small class="fragment">("Object" actually, but we're getting to that.)</small>
+                    </section>
+                    <section>
+                        <h2>Using Properties in Methods</h2>
                         <pre class="fragment"><code>
     class Robot {
         public function setMyVariable($param) {
@@ -270,6 +365,20 @@
 
         public function getMyVariable() {
             return $this->myVariableName;
+        }
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Calling methods from methods</h2>
+                        <pre class="fragment"><code>
+    class Robot {
+        public function doTheThing() {
+            $this->doSomething();
+        }
+
+        protected function doSomething() {
+            // Something!
         }
     }
                         </code></pre>
@@ -294,7 +403,7 @@
                     <section>
                         <h2>Destructors</h2>
                         <p>Called just before deleting an object of the classes type</p>
-                        <p>No parameters allowed</p>
+                        <p>No parameters <em>ever</em></p>
                         <pre><code>
     class Robot {
         public __destruct() {
@@ -310,7 +419,7 @@
                 </section>
                 <section>
                     <section>
-                        <h1>Blueprints and Objects</h1>
+                        <h1>Building Robots</h1>
                     </section>
                     <section  data-background-transition="none" data-background="images/blueprintVsThing1.png" data-background-size="contain">
                         &nbsp;
@@ -322,20 +431,6 @@
                         &nbsp;
                     </section>
                     <section>
-                        <h2>A Blueprint more than an Ideal Form </h2>
-                        <p>It tells you how to build things!</p>
-                    </section>
-                    <section>
-                        <h2>Manufactured Reality</h2>
-                        <p>Different options selected on creation</p>
-                        <P>Modification after creation</P>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>Building Robots</h1>
-                    </section>
-                    <section>
                         <h2>Classes are Blueprints for Objects</h2>
                         <p>They're used to build your house, not be your house</p>
                     </section>
@@ -343,8 +438,32 @@
                         <h2>Creating Objects</h2>
                         <p class="fragment">"Instantiating a class"</p>
                         <pre><code>
-    $myObject = new MyClass();
+    $myObject = new Robot();
+
+    $otherObject = new RobotBatteriesNotIncluded($battery);
                         </code></pre>
+                    </section>
+                    <section>
+                        <h2>"new" Keyword</h2>
+                        <p>Calls the class's constructor method</p>
+                        <p>"returns" a new object</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Robot Hierarchies</h1>
+                    </section>
+                    <section>
+                        <h2>Something about method overloading</h2>
+                    </section>
+                    <section>
+                        <h2>Something about the :: operator</h2>
+                    </section>
+                    <section>
+                        <h2>Something about abstract methods</h2>
+                    </section>
+                    <section>
+                        <h2>Something about final methods</h2>
                     </section>
                 </section>
                 <section>
@@ -419,16 +538,6 @@ x                    </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Inheritance</h1>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>Izza, Hazza, Whatza?</h1>
-                    </section>
-                </section>
-                <section>
-                    <section>
                         <h1>Interfaces</h1>
                     </section>
                     <section>
@@ -468,11 +577,6 @@ x                    </section>
                         <p>What an object can do is more important</p>
                         <p>Define a completely different class "lineage"</p>
                         <p>Excellent place for documentation</p>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>OOP Myths</h1>
                     </section>
                 </section>
                 <section>
