@@ -368,6 +368,7 @@
         }
     }
                         </code></pre>
+                        <small class="fragment">(The above is called a "setter" and "getter".)</small>
                     </section>
                     <section>
                         <h2>Calling methods from methods</h2>
@@ -505,6 +506,95 @@ x                    </section>
                 </section>
                 <section>
                     <section>
+                        <h1>Contractual Robots</h1>
+                    </section>
+                    <section>
+                        <h2>Let's Make a Contract</h2>
+                        <p>You to do something</p>
+                        <p>I agree to only ask you to do things you can do</p>
+                    </section>
+                    <section>
+                        <h2>Interfaces</h2>
+                        <p>Like a class, but lighter</p>
+                        <p>Can't be created by itself, but implemented by classes</p>
+                    </section>
+                    <section>
+                        <h2>Defining Interface</h2>
+                        <pre><code>
+    interface AstroMech {
+
+        public function beepBoop();
+
+        protected function navigateXwing($coordinates, $speed);
+
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Interfaces have no properties</h2>
+                        <p>They only define what they can do...</p>
+                        <p>...not how they do it or what they did.</p>
+                    </section>
+                    <section>
+                        <h2>Interface Methods</h2>
+                        <p>No method body</p>
+                        <p>Define params as normal</p>
+                    </section>
+                    <section>
+                        <h2>Using Interfaces</h2>
+                        <p class="fragment"><code>implements</code> keyword</p>
+                        <pre class="fragment"><code>
+    class R2DTwo extends BaseDroid implements AstroMech {
+        ...
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Why!?</h2>
+                        <p>You can only inherit once...</p>
+                        <p>...but implement multiple interfaces!</p>
+                        <pre><code>
+    class ThreeCPO implements ProtocolDroid, LoadLiftProgrammer {
+        ...
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2><del>IS_A</del>, <del>HAS_A</del>, DOES_A</h2>
+                        <p>What an object can do is more important</p>
+                        <p>Define a completely different class "lineage"</p>
+                        <p>Excellent place for documentation</p>
+                    </section>
+                    <section>
+                        <h2>Interfaces &heartsuit; Type Hinting</h2>
+                        <p class="fragment">Now you only depend on the interface, not class</p>
+                        <pre><code>
+    function myFunction(AstroMech $droid) {
+        // Do something.
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Extending Interfaces</h2>
+                        <p class="fragment"><code>extends</code> keyword, just like classes</p>
+                        <pre class="fragment"><code>
+    interface R2Droid extends AstroMech {
+        public function hide($lightsaber);
+    }
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Playing Nice With Other Robots</h1>
+                    </section>
+                    <section>
+                        <h2>Namespaces</h2>
+                        <p>IMAGE GOES HERE?</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
                         <h1>Structuring Your Project</h1>
                     </section>
                     <section>
@@ -522,10 +612,6 @@ x                    </section>
                         <p>No *.inc for PHP</p>
                     </section>
                     <section>
-                        <h2>Namespaces</h2>
-                        <p>IMAGE GOES HERE?</p>
-                    </section>
-                    <section>
                         <h2>Directories</h2>
                         <p>Match your namespaces</p>
                         <p>Nested namespace = nested directory</p>
@@ -534,49 +620,6 @@ x                    </section>
                         <h2>Project directory</h2>
                         <p>Conventions differ between languages and communities</p>
                         <p>Modern PHP uses <code>&lt;project_dir&gt;/src</code></p>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>Interfaces</h1>
-                    </section>
-                    <section>
-                        <h2>Let's Make a Contract</h2>
-                        <p>You to do something</p>
-                        <p>I agree to only ask you to do things you can do</p>
-                    </section>
-                    <section>
-                        <h2>Defining Interface</h2>
-                        <pre><code>
-    interface MyInterface extends SomeOtherInterface {
-
-        public function someMethod();
-
-        protected function someOtherMethod($stuff, $things);
-
-    }
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>Interfaces have no properties</h2>
-                        <p>They only define what they can do...</p>
-                        <p>...not how they do it or what they did.</p>
-                    </section>
-                    <section>
-                        <h2>Interface Methods</h2>
-                        <p>No method body</p>
-                        <p>Define params as normal</p>
-                    </section>
-                    <section>
-                        <h2>Why!?</h2>
-                        <p>You can only inherit once...</p>
-                        <p>...but implement multiple interfaces!</p>
-                    </section>
-                    <section>
-                        <h2><del>IS_A</del>, <del>HAS_A</del>, DOES_A</h2>
-                        <p>What an object can do is more important</p>
-                        <p>Define a completely different class "lineage"</p>
-                        <p>Excellent place for documentation</p>
                     </section>
                 </section>
                 <section>
