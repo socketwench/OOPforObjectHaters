@@ -354,41 +354,6 @@
                         <p><code>protected</code> = Only classes in the same family</p>
                     </section>
                     <section>
-                        <h2>Talking to Yourself</h2>
-                        <p class="fragment"><code>$this</code> keyword</p>
-                        <p class="fragment">Refers to class* that owns the method</p>
-                        <small class="fragment">*Object actually, but we're getting to that.</small>
-                    </section>
-                    <section>
-                        <h2>Using Properties in Methods</h2>
-                        <pre class="fragment"><code>
-    class Robot {
-        public function setMyVariable($param) {
-            $this->$myVariableName = $param;
-        }
-
-        public function getMyVariable() {
-            return $this->myVariableName;
-        }
-    }
-                        </code></pre>
-                        <small class="fragment">(The above is called a "setter" and "getter".)</small>
-                    </section>
-                    <section>
-                        <h2>Calling methods from methods</h2>
-                        <pre class="fragment"><code>
-    class Robot {
-        public function doTheThing() {
-            $this->doSomething();
-        }
-
-        protected function doSomething() {
-            // Something!
-        }
-    }
-                        </code></pre>
-                    </section>
-                    <section>
                         <h2>Special Methods</h2>
                         <p>Plays a special role in the language</p>
                         <p><a href="http://php.net/manual/en/language.oop5.magic.php">http://php.net/manual/en/language.oop5.magic.php</a></p>
@@ -444,12 +409,17 @@
                         <p>They're used to build your house, not be your house</p>
                     </section>
                     <section>
+                        <h2>Objects Live in Memory</h2>
+                        <p>Classes are defined in your code</p>
+                        <p>One class = zero or more objects</p>
+                    </section>
+                    <section>
                         <h2>Creating Objects</h2>
                         <p class="fragment">"Instantiating a class"</p>
                         <pre><code>
-    $myObject = new Robot();
+    $myRobot = new Robot();
 
-    $otherObject = new RobotBatteriesNotIncluded($battery);
+    $otherRobot = new RobotBatteriesNotIncluded($battery);
                         </code></pre>
                     </section>
                     <section>
@@ -461,8 +431,42 @@
                         <h2>Using Objects</h2>
                         <p><code>-></code> or "arrow" operator</p>
                         <pre><code>
-                            $robot->myVariable = 'Some other value.';
-                            $robot->myMethod($param);
+    $myRobot->myVariable = 'Some other value.';
+    $myRobot->myMethod($param);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Using Properties in Methods</h2>
+                        <pre class="fragment"><code>
+    class Robot {
+        public function setMyVariable($param) {
+            $this->$myVariableName = $param;
+        }
+
+        public function getMyVariable() {
+            return $this->myVariableName;
+        }
+    }
+                        </code></pre>
+                        <small class="fragment">(The above is called a "setter" and "getter".)</small>
+                    </section>
+                    <section>
+                        <h2>Talking to Yourself</h2>
+                        <p class="fragment"><code>$this</code> keyword</p>
+                        <p class="fragment">Refers to object that owns the method</p>
+                    </section>
+                    <section>
+                        <h2>Calling methods from methods</h2>
+                        <pre class="fragment"><code>
+    class Robot {
+        public function doTheThing() {
+            $this->doSomething();
+        }
+
+        protected function doSomething() {
+            // Something!
+        }
+    }
                         </code></pre>
                     </section>
                 </section>
@@ -511,9 +515,32 @@ x                    </section>
                         <p>Visualize when objects are created/destroyed</p>
                         <p>When and what classes "say" to each other</p>
                     </section>
-                    <section>
-                        <h2>SOME PICTURES HERE</h2>
-                        <p>BASED ON PREVIOUS CLASS SAMPLES</p>
+                    <section data-background="images/sequence1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence4.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence5.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence6.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence7.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence8.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sequence9.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
                     </section>
                     <section>
                         <h2>Moar UML!</h2>
@@ -598,6 +625,10 @@ x                    </section>
         public function hide($lightsaber);
     }
                         </code></pre>
+                    </section>
+                    <section>
+                        <h2>Drawing Interfaces</h2>
+                        <img src="images/drawingInterfaces.png">
                     </section>
                 </section>
                 <section>
