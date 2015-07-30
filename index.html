@@ -635,9 +635,79 @@ x                    </section>
                     <section>
                         <h1>Playing Nice With Other Robots</h1>
                     </section>
+                    <section data-background="images/namespaces1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces4.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces5.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces6.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces7.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces8.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces9.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/namespaces10.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
                     <section>
                         <h2>Namespaces</h2>
-                        <p>IMAGE GOES HERE?</p>
+                        <p>Puts classes into a named box</p>
+                        <p>Names need be only unique in each box</p>
+                    </section>
+                    <section>
+                        <h2>Using Namespaces in PHP</h2>
+                        <pre><code>
+    $myDate = new \MacLeod\Date();
+    $yourDate = new \Kurgan\Date();
+                        </code></pre>
+                        <small class="fragment">Syntax differs <strong>greatly</strong> across languages!</small>
+                    </section>
+                    <section>
+                        <h2>Defining Namespaces</h2>
+                        <pre><code>
+    &lt;?php
+    namespace \Movies\Action\Highlander;
+                        </code></pre>
+                        <p>Must be the first line!</p>
+                    </section>
+                    <section data-background="images/reallyLongNamespace.png" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Importing</h2>
+                        <pre><code>
+    use \Really\Long\Namespaced\Class\Name;
+
+    $myName = new Name();
+                        </code></pre>
+                    </section>
+                    <section data-background="images/importNameConflict.png" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Aliasing</h2>
+                        <p>Imports class and gives it a new name</p>
+                        <pre><code>
+    use \Movies\Action\Highlander\Kurgan\Date as BadGuy;
+
+    $myVar = new BadGuy();
+                        </code></pre>
                     </section>
                 </section>
                 <section>
@@ -662,6 +732,9 @@ x                    </section>
                         <h2>Directories</h2>
                         <p>Match your namespaces</p>
                         <p>Nested namespace = nested directory</p>
+                    </section>
+                    <section>
+                        <h2>IMAGE HERE</h2>
                     </section>
                     <section>
                         <h2>Project directory</h2>
