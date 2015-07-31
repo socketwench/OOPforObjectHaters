@@ -474,27 +474,112 @@
                     <section>
                         <h1>Robot Hierarchies</h1>
                     </section>
-                    <section>
-                        <h2></h2>
+                    <section data-background="images/overloading1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/overloading2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/overloading3.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
                     </section>
                     <section>
-                        <h2>Calling </h2>
+                        <h2>Doing Things Differently</h2>
                         <pre><code>
-    class SomeClass {
-        public myMethod() {
-            parent::myMethod()
+    $normalGhost->slime($ghostBuster);
+
+    $slimer->slimeLots($ghostBuster);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>But in use</h2>
+                        <pre><code>
+    switch(get_class($unknown_ghost)) {
+        case "Ghost":
+            $unknown_ghost->slime($ghostBuster);
+            break;
+
+        case "Slimer":
+            $unknown_ghost->slimeLots($ghostBuster);
+            break;
+    }
+                        </code></pre>
+                    </section>
+                    <section data-background="images/sameMethodSameFamily1.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section data-background="images/sameMethodSameFamily2.png" data-background-transition="none" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Method Overloading</h2>
+                        <pre><code>
+    class Ghost {
+        public function slime($ghostBuster) {
+            // Normal slime.
+        }
+    }
+
+    class Slimer extends Ghost {
+        public function slime($ghostBuster) {
+            // Lots more slime!
         }
     }
                         </code></pre>
                     </section>
-                    <section>
-                        <h2>Something about method overloading</h2>
+                    <section data-background="images/referToParent.png" data-background-size="contain">
+                        &nbsp;
                     </section>
                     <section>
-                        <h2>Something about abstract methods</h2>
+                        <h2>"parent" Keyword</h2>
+                        <p>Refers to the current class' parent class.</p>
+                        <p>Not a variable! Must be accessed <em>statically</em>.</p>
                     </section>
                     <section>
-                        <h2>Something about final methods</h2>
+                        <h2>"::" Operator</h2>
+                        <p>Like <code>-&gt;</code>, but static</p>
+                        <p>Accesses the class, not the object</p>
+                    </section>
+                    <section>
+                        <h2>Extending, Not Reimplementing</h2>
+                        <pre><code>
+    class Slimer extends Ghost {
+        public function __construct() {
+            $color = 'green';
+            parent::__construct($color);
+        }
+    }
+                        </code></pre>
+                        <p class="fragment">Works on any method!</p>
+                    </section>
+                    <section>
+                        <h2>Abstract Methods</h2>
+                        <p>All classes in this family should do this...</p>
+                        <p>...but each does it completely differently.</p>
+                    </section>
+                    <section>
+                        <h2>Defining an Abstract Method</h2>
+                        <pre><code>
+    class Ghost {
+        abstract public function frighten($person);
+    }
+                        </code></pre>
+                    </section>
+                    <section data-background="images/butIcantCreateThat.png" data-background-size="contain">
+                        &nbsp;
+                    </section>
+                    <section>
+                        <h2>Abstract Classes</h2>
+                        <p>Abstract method = abstract class.</p>
+                        <pre class="fragment"><code>
+    abstract class Ghost {
+        abstract public function frighten($person);
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Polymorphism</h2>
+                        <p>Fancy word for "same name, different action".</p>
                     </section>
                 </section>
                 <section>
@@ -703,7 +788,7 @@
                         <h2>Defining Namespaces</h2>
                         <pre><code>
     &lt;?php
-    namespace \Movies\Action\Highlander;
+    namespace \Movies\Highlander;
                         </code></pre>
                         <p>Must be the first line!</p>
                     </section>
@@ -725,7 +810,7 @@
                         <h2>Aliasing</h2>
                         <p>Imports class and gives it a new name</p>
                         <pre><code>
-    use \Movies\Action\Highlander\Kurgan\Date as BadGuy;
+    use \Movies\\Highlander\Kurgan\Date as BadGuy;
 
     $myVar = new BadGuy();
                         </code></pre>
@@ -755,10 +840,13 @@
                         <p>Nested namespace = nested directory</p>
                     </section>
                     <section>
-                        <h2>IMAGE HERE</h2>
+                        <pre><code>
+    $myDate = new \Movies\Highlander\MacLeod\Date();
+                        </code></pre>
+                        <img src="images/namespaceDirs.png" class="fragment">
                     </section>
                     <section>
-                        <h2>Project directory</h2>
+                        <h2>Root Namespace Directory</h2>
                         <p>Conventions differ between languages and communities</p>
                         <p>Modern PHP uses <code>&lt;project_dir&gt;/src</code></p>
                     </section>
