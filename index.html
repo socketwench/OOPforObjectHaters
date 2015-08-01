@@ -304,6 +304,11 @@
                         &nbsp;
                     </section>
                     <section>
+                        <h2>"protected" Specifier</h2>
+                        <p>Property stays "within the family".</p>
+                        <p>Unrelated classes do not see or have it.</p>
+                    </section>
+                    <section>
                         <h2>Drawing Properties</h2>
                         <img src="images/drawingProperties.png">
                     </section>
@@ -369,22 +374,6 @@
         }
     }
                         </code></pre>
-                    </section>
-                    <section>
-                        <h2>Destructors</h2>
-                        <p>Called just before deleting an object of the classes type</p>
-                        <p>No parameters <em>ever</em></p>
-                        <pre><code>
-    class Robot {
-        public __destruct() {
-            // Cleanup before deleting the object.
-        }
-    }
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>Destructors in PHP</h2>
-                        <p>Rarely used as PHP is <em>garbage collected</em></p>
                     </section>
                     <section>
                         <h2>Drawing Methods</h2>
@@ -454,20 +443,6 @@
                         <h2>Talking to Yourself</h2>
                         <p class="fragment"><code>$this</code> keyword</p>
                         <p class="fragment">Refers to object that owns the method</p>
-                    </section>
-                    <section>
-                        <h2>Calling methods from methods</h2>
-                        <pre class="fragment"><code>
-    class Robot {
-        public function doTheThing() {
-            $this->doSomething();
-        }
-
-        protected function doSomething() {
-            // Something!
-        }
-    }
-                        </code></pre>
                     </section>
                 </section>
                 <section>
@@ -810,7 +785,7 @@
                         <h2>Aliasing</h2>
                         <p>Imports class and gives it a new name</p>
                         <pre><code>
-    use \Movies\\Highlander\Kurgan\Date as BadGuy;
+    use \Movies\Highlander\Kurgan\Date as BadGuy;
 
     $myVar = new BadGuy();
                         </code></pre>
@@ -878,10 +853,7 @@
                 </section>
 				<section>
 					<section>
-						<h1>Summary</h1>
-					</section>
-					<section>
-						<h2>Further Reading</h2>
+						<h1>Further Reading</h1>
 						<p><em>Design Patterns</em> by Erich Gamma et. al</p>
 						<p><a href="http://www.phptherightway.com/">PHP The Right Way</a></p>
 						<p><a href="http://shop.oreilly.com/product/0636920033868.do">Modern PHP</a></p>
